@@ -1,4 +1,4 @@
-# :camera: Pix.T project :camera:
+# Pix.T project :camera:
 
 ## Installation
 
