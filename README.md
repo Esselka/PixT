@@ -10,6 +10,8 @@ cd PixT
 npm start
 ```
 
+You can then go here to test the Dapp : http://localhost:3000/
+
 ## Developers
 
 # @TODO !

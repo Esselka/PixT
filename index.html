@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PixT</title>
 </head>
+
 <body>
     <h1>PixT</h1>
+    <button onclick="createMetaMaskDapp()">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br> Créer nouvelle image : <input type="file" id="fichierImage" accept="image/png, image/jpeg">
+    <button onclick="creerNouvelleImg()">Créer image</button><span type="text" id="resultImgCreee"></span><br><br> Récupérer données images : <input type="text" id="tokenID" placeholder="Image ID">
+    <button onclick="getPicInfos(document.getElementById('tokenID').value)">Données image</button><span type="text" id="infosPic"></span><br><br> Fichier Métadonnées (.csv) : <input type="file" id="csvFile"><button onclick="lireCSV()">Ajouter Metadonnées</button><br><br>
+    <span type="text" id="csvResult"></span><br><br>
+
+    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="app.js"></script>
+    <script src="infos_SC.js"></script>
 </body>
+
 </html>

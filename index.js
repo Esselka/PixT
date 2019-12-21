@@ -1,12 +1,19 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-//const router = express.Router();
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname)+'/index.html')
+  res.sendFile(path.join(__dirname) + '/index.html')
+})
+
+app.get('/app.js', (req, res) => {
+  res.sendFile(path.join(__dirname) + '/app.js')
+})
+
+app.get('/infos_SC.js', (req, res) => {
+  res.sendFile(path.join(__dirname) + '/infos_SC.js')
 })
 
 app.listen(3000, () => {
-    console.log("Server is running on http://localhost:3000/")
+  console.log("Server is running on http://localhost:3000/")
 })
