@@ -50,7 +50,13 @@ contract PixT is ERC721, PixTAccessControl {
         contractOwner = msg.sender; // the creator of the contract is the initial owner
     }
     
-    //TODO  
+    /**
+     * @dev Buying a picture
+     * @param _tokenID uint256 ID of the token
+     * @param amount uint256 amount paid to buy the picture
+     * @param shipping uint8 shipping options value
+     * @param format uint256 format of the picture the photo buyer wants
+     */
     function buyPics(uint256 _tokenID, uint256 amount, uint8 shipping, uint256 format) public payable {
         require(msg.value >= amount, "The amount you paid is too low.");
         require(_exists(_tokenID), "This token doesn't exists.");
@@ -68,27 +74,59 @@ contract PixT is ERC721, PixTAccessControl {
     /**
      * @dev Create a new picture with all its metadatas. Only available to the current owner
      * @param _datas string all metadatas of the picture in a single string
-     * @param _owner address address of the token's owner
+     * @param _permission bool authorize Pix.T to manage its photos commercialization as prints
      */
-    function createNewPicture(string memory _datas, address _owner) onlyRLevel public {
+    function createNewPicture(string memory _datas, bool _permission) onlyRLevel public {
         require(!_exists(tokenID), "This token already exists.");
-        require(_owner != address(0), "Invalid owner's address.");
         
         _pics[tokenID] = Picture(_datas, false, true);
-        _mint(_owner, tokenID);
-        _tokenToOwnerList[_owner].push(tokenID);
+        _mint(msg.sender, tokenID);
+        _tokenToOwnerList[msg.sender].push(tokenID);
+        _givePermission[tokenID] = _permission;
         
         tokenID++; // Increment tokenID for the next token
     }
     
-    //TODO
-    function setPermission(uint256 _tokenID, bool value) public {
+    /**
+     * @dev Set if the picture is printable or not
+     * @param _tokenID uint256 ID of the token
+     * @param value bool True if the picture is printable, else False
+     */
+    function setPrintable(uint256 _tokenID, bool value) public {
         require(ownerOf(_tokenID) == msg.sender, "Not token's owner.");
         require(_exists(_tokenID), "This token doesn't exists.");
         _pics[_tokenID].isAllowedToPrint = value;
     }
     
-    //TODO
+    /**
+     * @dev Set if PixT is allowed to manage its photos commercialization as prints
+     * @param _tokenID uint256 ID of the token
+     * @param value bool True if PixT is allowed to manage the picture as print, else False
+     */
+    function setPermission(uint256 _tokenID, bool value) public {
+        require(ownerOf(_tokenID) == msg.sender, "Not token's owner.");
+        require(_exists(_tokenID), "This token doesn't exists.");
+        _givePermission[_tokenID] = value;
+    }
+    
+    /**
+     * @dev Set the access level of a photo owner
+     * @param _tokenID uint256 ID of the token
+     * @param _level uint8 Access level of the photo's owner
+     */
+    function setAccessLevel(uint256 _tokenID, uint8 _level) public onlyRLevel {
+        require(_exists(_tokenID), "This token doesn't exists.");
+        require(_level >= 0 && _level <= 255, "Level value out of range.");
+        
+        address theOwner = ownerOf(_tokenID);
+        _photosOwners[theOwner].accesLevel = _level;
+    }
+    
+    /**
+     * @dev Get the list of tokens owned by an address 
+     * @param _address address Address we want to have the list of tokens
+     * @return uint256[] List of owned tokens
+     */
     function getListToken(address _address) public view returns (uint256[] memory) {
         require(_tokenToOwnerList[_address].length > 0, "No token owned.");
         require(_address != address(0), "Invalid address.");
@@ -96,7 +134,16 @@ contract PixT is ERC721, PixTAccessControl {
     }
     
     /**
+     * @dev Get the current tokenID value
+     * @return uint256 Id of the current tokenID
+     */
+    function getTokenID() public view returns (uint256) {
+        return tokenID;
+    }
+    
+    /**
      * @dev get all informations of a tokenID
+     * @param _tokenID uint256 ID of the token
      * @return datas string representing all the metadatas of the Picture
      * @return copyright bool is the picture under a copyright infrigement ? yes = TRUE, else FALSE
      * @return printable bool TRUE = the news reader can clicks the picture for print sale and is redirected to the print eCommerce site and order

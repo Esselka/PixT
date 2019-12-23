@@ -1,0 +1,86 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+}
+
+button {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #ed3330;
+    padding: 7px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+button:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+}
+
+#meta-button {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    background-color: rgb(90, 45, 1);
+}
+
+.bordure {
+    background-color: burlywood;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 20px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    width: 900px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+/*#admin-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: orangered;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-decoration: none;
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+}*/
+
+.top-right-button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    background: #ff7100;
+    border-style: none;
+    color: #fff;
+    margin: 0 10px 5px 5px;
+    text-align: center;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.top-right-button:hover {
+    background-color: #02b8dd;
+    color: black;
+}

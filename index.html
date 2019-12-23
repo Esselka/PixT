@@ -5,15 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>PixT</title>
 </head>
 
 <body>
-    <h1>PixT</h1>
-    <button onclick="createMetaMaskDapp()">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br> Créer nouvelle image : <input type="file" id="fichierImage" accept="image/png, image/jpeg">
-    <button onclick="creerNouvelleImg()">Créer image</button><span type="text" id="resultImgCreee"></span><br><br> Récupérer données images : <input type="text" id="tokenID" placeholder="Image ID">
-    <button onclick="getPicInfos(document.getElementById('tokenID').value)">Données image</button><span type="text" id="infosPic"></span><br><br> Fichier Métadonnées (.csv) : <input type="file" id="csvFile"><button onclick="lireCSV()">Ajouter Metadonnées</button><br><br>
-    <span type="text" id="csvResult"></span><br><br>
+    <button onclick="createMetaMaskDapp()" id="meta-button">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br>
+    <a href="admin.html" class="top-right-button">Admin Panel</a>
+    <h1 class="center-text">PixT</h1>
+    <div class="bordure">
+        <h3><u>Récupérer les métadonnées d'une image</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID" placeholder="Image ID"><br><br>
+        <button onclick="getPicInfos(document.getElementById('tokenID').value)">Récupérer</button><br><span type="text" id="infosPic"></span><br><br>
+
+    </div>
+    <div class="bordure">
+        <h3><u>Acheter une image</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-achat" placeholder="Image ID"><br><br> Méthode d'envoi :
+        <input type="radio" name="choix-expedition" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
+        <input type="radio" name="choix-expedition" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
+        <input type="radio" name="choix-expedition" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br> Format de l'image :
+        <input type="radio" name="choix-format" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
+        <input type="radio" name="choix-format" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
+        <input type="radio" name="choix-format" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br>
+
+        <button onclick="acheterImage()">Acheter</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Définir si une image peut être imprimée et rendue visible sur le site eCommerce</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-printable" placeholder="Image ID"><br><br> L'image peut-elle être imprimée ?
+        <input type="radio" name="choix-printable" value="true" id="oui" checked /> <label for="oui">oui</label>
+        <input type="radio" name="choix-printable" value="false" id="non" /> <label for="non">non</label><br><br>
+        <button onclick="setPrintable()">Définir</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Définir si PixT est autorisé à gérer la commercialisation d'une image en tant qu'impression</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-permission" placeholder="Image ID"><br><br> Autoriser PixT à gérer l'image ?
+        <input type="radio" name="choix-permission" value="true" id="oui" checked /> <label for="oui">oui</label>
+        <input type="radio" name="choix-permission" value="false" id="non" /> <label for="non">non</label><br><br>
+        <button onclick="setPermission()">Définir</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Trouver l'adresse du propriétaire d'une image</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-proprio" placeholder="Image ID"><br><br>
+        <button onclick="getOwnerOf(document.getElementById('tokenID-proprio').value)">Propriétaire ?</button><br><br>
+        <span type="text" id="adresseProprio"></span><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Transférer la propriété d'une image à une autre adresse</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-transfer" placeholder="Image ID"><br><br> Adresse nouveau propriétaire : <input type="text" id="tokenID-newOwner" placeholder="Adresse format 0x..."><br><br>
+        <button onclick="transferImage(document.getElementById('tokenID-transfer').value, document.getElementById('tokenID-newOwner').value)">Transférer</button><br><br>
+    </div>
+
 
     <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
     <script src="app.js"></script>

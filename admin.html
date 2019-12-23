@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin page</title>
+</head>
+
+<body>
+    <button onclick="createMetaMaskDapp()" id="meta-button">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br>
+    <a href="/" class="top-right-button">Client Page</a>
+    <h1 class="center-text">Admin Panel</h1>
+    <div class="bordure">
+        <h3><u>Créer une image en ajoutant ses métadonnées</u> : </h3>
+        Autoriser PixT à gérer la commercialisation et l'impression de la photo ?
+        <input type="radio" name="autorisation" value="oui" id="oui" checked /> <label for="oui">oui</label>
+        <input type="radio" name="autorisation" value="non" id="non" /> <label for="non">non</label>
+        <br><br> Fichier Métadonnées (.csv) : <input type="file" id="csvFile"><br><br><button onclick="lireCSV()">Ajouter Metadonnées</button><br><br>
+        <span type="text" id="csvResult"></span><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Changer propriétaire du contrat (IRREVERSIBLE !)</u></h3>
+        Seul l'actuel propriétaire du contrat peut effectuer cette action <br><br> Adresse nouveau propriétaire : <input type="text" id="newOwnerAddr" placeholder="Adresse format 0x..."><br><br>
+        <button onclick="setNewOwner()">Changer</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Définir les adresses des administrateurs</u></h3>
+        Seul l'actuel propriétaire du contrat peut effectuer cette action <br><br> Admin 1 : <input type="text" id="admin1" placeholder="Adresse format 0x..."><br><br> Admin 2 : <input type="text" id="admin2" placeholder="Adresse format 0x..."><br><br>        Admin 3 : <input type="text" id="admin3" placeholder="Adresse format 0x..."><br><br>
+        <button onclick="setRolesAddress()">Définir</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Définir le niveau d'accès du propriétaire d'une image</u> :</h3>
+        Identifiant de l'image : <input type="text" id="tokenID-acces-level" placeholder="Image ID"><br><br> Niveau d'accès :
+        <FORM>
+            <SELECT id="accesLevel">
+            <OPTION value="1">niveau1
+            <OPTION value="2">niveau2
+            <OPTION value="3">niveau3
+            <OPTION value="4">niveau4
+            <OPTION value="5">niveau5
+            </SELECT>
+        </FORM><br>
+        <button onclick="setAccessLevel()">Définir</button><br><br>
+    </div>
+    <div class="bordure">
+        <h3><u>Balance du contrat</u> :</h3>
+        Seul l'actuel propriétaire du contrat peut effectuer cette action <br><br>
+        <button onclick="getBalance()">Balance</button><br><br>
+        <span type="text" id="SCBalance"></span><br><br>
+    </div>
+
+    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+    <script src="app.js"></script>
+    <script src="infos_SC.js"></script>
+</body>
+
+</html>
