@@ -7,6 +7,7 @@ You need node.js and npm. You should probably install this globally. [Install No
 ```sh
 git clone https://github.com/Esselka/PixT.git
 cd PixT
+npm install
 npm start
 ```
 :arrow_forward: Smart Contract deployed on ***Kovan's testnet*** :bangbang:
