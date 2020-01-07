@@ -13,50 +13,107 @@
     <button onclick="createMetaMaskDapp()" id="meta-button">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br>
     <a href="admin.html" class="top-right-button">Admin Panel</a>
     <h1 class="center-text">PixT</h1>
-    <div class="bordure">
-        <h3><u>Récupérer les métadonnées d'une image</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID" placeholder="Image ID"><br><br>
-        <button onclick="getPicInfos(document.getElementById('tokenID').value)">Récupérer</button><br><span type="text" id="infosPic"></span><br><br>
 
+    <h2><u>Que voulez-vous faire ?</u></h2>
+    <div id="menu-admin">
+        <div class="menu-choix">
+            <a href="#getMetadatas">
+                <h3>Obtenir les métadonnées d'une image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#buyImage">
+                <h3>Acheter un image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#setVisibility">
+                <h3>Définir la visibilité et l'impression d'une image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#setCommercialisation">
+                <h3>Gérer la commercialisation d'une image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#imageOwner">
+                <h3>Savoir à qui appartient une image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#imageTransfer">
+                <h3>Donner une image à une autre personne</h3>
+            </a>
+        </div>
     </div>
-    <div class="bordure">
-        <h3><u>Acheter une image</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID-achat" placeholder="Image ID"><br><br> Méthode d'envoi :
-        <input type="radio" name="choix-expedition" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
-        <input type="radio" name="choix-expedition" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
-        <input type="radio" name="choix-expedition" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br> Format de l'image :
-        <input type="radio" name="choix-format" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
-        <input type="radio" name="choix-format" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
-        <input type="radio" name="choix-format" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br>
+    <div class="centrer-bordure" id="getMetadatas">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Récupérer les métadonnées d'une image</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID" placeholder="Image ID"><br><br>
+            <button onclick="getPicInfos(document.getElementById('tokenID').value)">Récupérer</button><br><span type="text" id="infosPic"></span><br><br>
 
-        <button onclick="acheterImage()">Acheter</button><br><br>
+        </div>
     </div>
-    <div class="bordure">
-        <h3><u>Définir si une image peut être imprimée et rendue visible sur le site eCommerce</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID-printable" placeholder="Image ID"><br><br> L'image peut-elle être imprimée ?
-        <input type="radio" name="choix-printable" value="true" id="oui" checked /> <label for="oui">oui</label>
-        <input type="radio" name="choix-printable" value="false" id="non" /> <label for="non">non</label><br><br>
-        <button onclick="setPrintable()">Définir</button><br><br>
-    </div>
-    <div class="bordure">
-        <h3><u>Définir si PixT est autorisé à gérer la commercialisation d'une image en tant qu'impression</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID-permission" placeholder="Image ID"><br><br> Autoriser PixT à gérer l'image ?
-        <input type="radio" name="choix-permission" value="true" id="oui" checked /> <label for="oui">oui</label>
-        <input type="radio" name="choix-permission" value="false" id="non" /> <label for="non">non</label><br><br>
-        <button onclick="setPermission()">Définir</button><br><br>
-    </div>
-    <div class="bordure">
-        <h3><u>Trouver l'adresse du propriétaire d'une image</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID-proprio" placeholder="Image ID"><br><br>
-        <button onclick="getOwnerOf(document.getElementById('tokenID-proprio').value)">Propriétaire ?</button><br><br>
-        <span type="text" id="adresseProprio"></span><br><br>
-    </div>
-    <div class="bordure">
-        <h3><u>Transférer la propriété d'une image à une autre adresse</u> :</h3>
-        Identifiant de l'image : <input type="text" id="tokenID-transfer" placeholder="Image ID"><br><br> Adresse nouveau propriétaire : <input type="text" id="tokenID-newOwner" placeholder="Adresse format 0x..."><br><br>
-        <button onclick="transferImage(document.getElementById('tokenID-transfer').value, document.getElementById('tokenID-newOwner').value)">Transférer</button><br><br>
-    </div>
+    <div class="centrer-bordure" id="buyImage">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Acheter une image</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID-achat" placeholder="Image ID"><br><br> Méthode d'envoi :
+            <input type="radio" name="choix-expedition" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
+            <input type="radio" name="choix-expedition" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
+            <input type="radio" name="choix-expedition" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br> Format de l'image :
+            <input type="radio" name="choix-format" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
+            <input type="radio" name="choix-format" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
+            <input type="radio" name="choix-format" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br>
 
+            <button onclick="acheterImage()">Acheter</button><br><br>
+        </div>
+    </div>
+    <div class="centrer-bordure" id="setVisibility">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Définir si une image peut être imprimée et rendue visible sur le site eCommerce</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID-printable" placeholder="Image ID"><br><br> L'image peut-elle être imprimée ?
+            <input type="radio" name="choix-printable" value="true" id="oui" checked /> <label for="oui">oui</label>
+            <input type="radio" name="choix-printable" value="false" id="non" /> <label for="non">non</label><br><br>
+            <button onclick="setPrintable()">Définir</button><br><br>
+        </div>
+    </div>
+    <div class="centrer-bordure" id="setCommercialisation">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Définir si PixT est autorisé à gérer la commercialisation d'une image en tant qu'impression</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID-permission" placeholder="Image ID"><br><br> Autoriser PixT à gérer l'image ?
+            <input type="radio" name="choix-permission" value="true" id="oui" checked /> <label for="oui">oui</label>
+            <input type="radio" name="choix-permission" value="false" id="non" /> <label for="non">non</label><br><br>
+            <button onclick="setPermission()">Définir</button><br><br>
+        </div>
+    </div>
+    <div class="centrer-bordure" id="imageOwner">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Trouver l'adresse du propriétaire d'une image</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID-proprio" placeholder="Image ID"><br><br>
+            <button onclick="getOwnerOf(document.getElementById('tokenID-proprio').value)">Propriétaire ?</button><br><br>
+            <span type="text" id="adresseProprio"></span><br><br>
+        </div>
+    </div>
+    <div class="centrer-bordure" id="imageTransfer">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Transférer la propriété d'une image à une autre adresse</u> :</h3>
+            Identifiant de l'image : <input type="text" id="tokenID-transfer" placeholder="Image ID"><br><br> Adresse nouveau propriétaire : <input type="text" id="tokenID-newOwner" placeholder="Adresse format 0x..."><br><br>
+            <button onclick="transferImage(document.getElementById('tokenID-transfer').value, document.getElementById('tokenID-newOwner').value)">Transférer</button><br><br>
+        </div>
+    </div>
 
     <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
     <script src="app.js"></script>

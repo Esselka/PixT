@@ -16,7 +16,7 @@ async function createMetaMaskDapp() {
         dapp.monContrat.on('Transfer', (_from, _to, _tokenID) => {
             console.log(`Transfert effectué\nFrom    : ${_from}\nTo      : ${_to}\nTokenID : ${_tokenID}`);
         });
-        document.getElementById("metaMaskOK").innerHTML = " Connexion au contrat établie";
+        document.getElementById("metaMaskOK").innerHTML = "--> Connexion établie <--";
     } catch (err) {
         // Gestion des erreurs
         document.getElementById("metaMaskOK").innerHTML = " La connexion à MetaMask a échouée";

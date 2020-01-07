@@ -22,5 +22,5 @@ coming soon :)
 
 # @TODO !
 
- - Improve user experience
+ - Improve Ux
  - Review PixT needs about this dapp
