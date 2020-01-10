@@ -228,3 +228,18 @@ async function getBalance() {
         alert("Veuillez vous connecter à MetaMask avant d'effectuer toute opération.");
     }
 }
+
+//TODO : Ux
+async function getPhotoOwnerInfos() {
+    if (metaMaskconnected === true) {
+        try {
+            let infos = await dapp.monContrat.getPhotoOwnerInfos(dapp.user);
+            document.getElementById('resPhotoOwnerinfos#1').innerHTML += `${infos[1]}`;
+            document.getElementById('resPhotoOwnerinfos#2').innerHTML += `${infos[2]}€`;
+        } catch (err) {
+            console.error(err);
+        }
+    } else {
+        alert("Veuillez vous connecter à MetaMask avant d'effectuer toute opération.");
+    }
+}

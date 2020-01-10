@@ -12,7 +12,7 @@ contract PixT is ERC721, PixTAccessControl {
     }
     
     struct PhotoOwner {
-        uint8 accesLevel;           // Define access / limitation / embargo / between Photo owner / agency’s system and Pix.T solution
+        uint8 accessLevel;          // Define access / limitation / embargo / between Photo owner / agency’s system and Pix.T solution
         uint256 sales;              // Track sales
         uint256 revenues;           // Track revenues
     }
@@ -119,7 +119,18 @@ contract PixT is ERC721, PixTAccessControl {
         require(_level >= 0 && _level <= 255, "Level value out of range.");
         
         address theOwner = ownerOf(_tokenID);
-        _photosOwners[theOwner].accesLevel = _level;
+        _photosOwners[theOwner].accessLevel = _level;
+    }
+    
+    /**
+     * @dev Get PhotoOwner's informations like the value of all revenues and number of sales
+     * @param _addr address Address from which we want to obtain informations
+     * @return uint256 sales Number of sales for this address
+     * @return uint256 revenues All revenues made from saling pictures
+     * return uint8 accessLevel Define access / limitation / embargo / between Photo owner / agency’s system and Pix.T solution
+     */
+    function getPhotoOwnerInfos(address _addr) public view returns (uint8 accessLevel, uint256 sales, uint256 revenues) {
+        return (_photosOwners[_addr].accessLevel, _photosOwners[_addr].sales, _photosOwners[_addr].revenues);
     }
     
     /**

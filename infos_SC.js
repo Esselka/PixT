@@ -1,4 +1,4 @@
-let CONTRACT_ADDRESS = "0xba43F1150A4D368602dAA53f60166a6A74c571C1"
+let CONTRACT_ADDRESS = "0xdF050220768a39b523FFDa220A027C7C0AB8498B"
 
 let CONTRACT_ABI = [{
         "constant": false,
@@ -143,30 +143,6 @@ let CONTRACT_ABI = [{
         "type": "function"
     },
     {
-        "constant": false,
-        "inputs": [{
-                "internalType": "address",
-                "name": "from",
-                "type": "address"
-            },
-            {
-                "internalType": "address",
-                "name": "to",
-                "type": "address"
-            },
-            {
-                "internalType": "uint256",
-                "name": "tokenId",
-                "type": "uint256"
-            }
-        ],
-        "name": "transferFrom",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -195,6 +171,30 @@ let CONTRACT_ABI = [{
         ],
         "name": "Transfer",
         "type": "event"
+    },
+    {
+        "constant": false,
+        "inputs": [{
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "transferFrom",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
     },
     {
         "constant": true,
@@ -252,6 +252,34 @@ let CONTRACT_ABI = [{
             "name": "",
             "type": "uint256[]"
         }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [{
+            "internalType": "address",
+            "name": "_addr",
+            "type": "address"
+        }],
+        "name": "getPhotoOwnerInfos",
+        "outputs": [{
+                "internalType": "uint8",
+                "name": "accessLevel",
+                "type": "uint8"
+            },
+            {
+                "internalType": "uint256",
+                "name": "sales",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "revenues",
+                "type": "uint256"
+            }
+        ],
         "payable": false,
         "stateMutability": "view",
         "type": "function"

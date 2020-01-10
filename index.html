@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <button onclick="createMetaMaskDapp()" id="meta-button">Connexion MetaMask</button><span type="text" id="metaMaskOK"></span><br><br>
+    <button onclick="createMetaMaskDapp()" id="meta-button">Connexion MetaMask</button><span type="text" id="metaMaskOK">&nbspVeuillez vous connecter</span><br><br>
     <a href="admin.html" class="top-right-button">Admin Panel</a>
     <h1 class="center-text">PixT</h1>
 
@@ -23,7 +23,12 @@
         </div>
         <div class="menu-choix">
             <a href="#buyImage">
-                <h3>Acheter un image</h3>
+                <h3>Acheter une image</h3>
+            </a>
+        </div>
+        <div class="menu-choix">
+            <a href="#getPhotoOwnerInfos">
+                <h3>Accéder à mes infos de ventes et revenus</h3>
             </a>
         </div>
         <div class="menu-choix">
@@ -43,7 +48,7 @@
         </div>
         <div class="menu-choix">
             <a href="#imageTransfer">
-                <h3>Donner une image à une autre personne</h3>
+                <h3>Transférer la propriété d'une image à une autre adresse</h3>
             </a>
         </div>
     </div>
@@ -68,9 +73,21 @@
             <input type="radio" name="choix-expedition" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br> Format de l'image :
             <input type="radio" name="choix-format" value="1" id="choix1" checked /> <label for="choix1">Choix #1</label>
             <input type="radio" name="choix-format" value="2" id="choix2" /> <label for="choix2">Choix #2</label>
-            <input type="radio" name="choix-format" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br>
+            <input type="radio" name="choix-format" value="3" id="choix3" /> <label for="choix3">Choix #3</label><br><br> Adresse d'envoi de l'image : <input type="text" id="adresseEnvoiImage" placeholder="Adresse d'envoi"><br><br>
+            <!--Inutilisé, juste pour le visuel-->
 
             <button onclick="acheterImage()">Acheter</button><br><br>
+        </div>
+    </div>
+    <div class="centrer-bordure" id="getPhotoOwnerInfos">
+        <div class="bordure">
+            <button onclick="createMetaMaskDapp()" id="meta-button-relative">Connexion MetaMask</button>
+            <button onclick="window.location.href='#'" class="btn-retour-menu">Menu</button>
+            <h3><u>Infos concernant mes ventes et mes revenus</u> :</h3>
+
+            <button onclick="getPhotoOwnerInfos()">Lister infos</button><br><br>
+            <span type="text" id="resPhotoOwnerinfos#1"><u>Nombre de ventes d'images effectué</u> : </span><br>
+            <span type="text" id="resPhotoOwnerinfos#2"><u>Revenus total de toutes vos ventes</u> : </span><br><br>
         </div>
     </div>
     <div class="centrer-bordure" id="setVisibility">
