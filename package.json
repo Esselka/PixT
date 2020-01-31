@@ -1,27 +1,32 @@
 {
-  "name": "pixt",
-  "version": "1.0.0",
-  "description": "PixT's Dapp",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Esselka/PixT.git"
-  },
-  "author": "Leclercq Alexis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Esselka/PixT/issues"
-  },
-  "homepage": "https://github.com/Esselka/PixT#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "pixt",
+    "version": "1.0.0",
+    "description": "PixT's Dapp",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "mocha",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Esselka/PixT.git"
+    },
+    "author": "Leclercq Alexis",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Esselka/PixT/issues"
+    },
+    "homepage": "https://github.com/Esselka/PixT#readme",
+    "dependencies": {
+        "@openzeppelin/contracts": "^2.4.0",
+        "@openzeppelin/test-helpers": "^0.5.4",
+        "chai": "^4.2.0",
+        "express": "^4.17.1",
+        "solidity-coverage": "^0.7.1"
+    },
+    "devDependencies": {
+        "mocha": "^7.0.1",
+        "nodemon": "^2.0.2"
+    }
 }
