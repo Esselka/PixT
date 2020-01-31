@@ -11,7 +11,7 @@ function Object() { [native code] }
 |from|address|
 |to|address|
 |tokenId|uint256|
-**Add Documentation for the method here**
+Event emitted when a token is transfered
 
 ## balanceOf - view
 |name |type |description
@@ -35,7 +35,7 @@ Buying a picture
 
 ## contractOwner - view
 _No parameters_
-**Add Documentation for the method here**
+Address of the current contract owner
 
 ## createNewPicture - read
 |name |type |description
@@ -79,15 +79,15 @@ Return : address currently marked as the owner of the given token ID
 
 ## role1 - view
 _No parameters_
-**Add Documentation for the method here**
+Role has to be defined
 
 ## role2 - view
 _No parameters_
-**Add Documentation for the method here**
+Role has to be defined
 
 ## role3 - view
 _No parameters_
-**Add Documentation for the method here**
+Role has to be defined
 
 ## setAccessLevel - read
 |name |type |description
@@ -100,7 +100,7 @@ Set the access level of a photo owner
 |name |type |description
 |-----|-----|-----------
 |_newOwner|address|
-**Add Documentation for the method here**
+Assigns a new address to act as the Owner. Only available to the current Owner
 
 ## setPermission - read
 |name |type |description
@@ -122,7 +122,7 @@ Set if the picture is printable or not
 |_role1|address|
 |_role2|address|
 |_role3|address|
-**Add Documentation for the method here**
+Set adresses of each role
 
 ## transferFrom - read
 |name |type |description
