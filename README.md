@@ -1,8 +1,11 @@
 # Pix.T project :camera:
 
+![image du projet](https://ibb.co/xDBtYSd)
+![image du projet](https://ibb.co/FXvDN3N)
+
 ## Installation
 
-You need node.js and npm. You should probably install this globally. [Install Node](https://nodejs.org/)
+Vous avez besoin de node.js and npm. Vous devriez probablement l'installer globalement. [Installer Node](https://nodejs.org/)
 
 ```sh
 git clone https://github.com/Esselka/PixT.git
@@ -10,17 +13,17 @@ cd PixT
 npm install
 npm start
 ```
-:arrow_forward: Smart Contract deployed on ***Kovan's testnet*** :bangbang:
+:arrow_forward: Smart Contract deployé sur ***Le testnet de Kovan*** :bangbang:
 
-Here is a metadatas example file to create a new token : [metadatas.csv](https://github.com/Esselka/PixT/blob/master/metadatas_exemple.csv)
+Voici un fichier exemple de métadonnées pour créer un nouveau token : [metadatas.csv](https://github.com/Esselka/PixT/blob/master/metadatas_exemple.csv)
 
-You can then go here to test the Dapp : http://localhost:3000/
+Vous pouvez désormais cliquer ici pour accéder à la DApp : http://localhost:3000/
 
 ## Developers
 
-coming soon :)
+[Documentation](https://github.com/Esselka/PixT/blob/master/docs/PixT.md)
 
 # @TODO !
 
- - Improve Ux
- - Review PixT needs about this dapp
+ - Améliorer l'expérience utilisateur
+ - Contacter PixT pour revoir les besoins concernant la DApp
