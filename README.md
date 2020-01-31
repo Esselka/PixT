@@ -1,7 +1,7 @@
 # Pix.T project :camera:
 
-![image du projet](https://ibb.co/xDBtYSd)
-![image du projet](https://ibb.co/FXvDN3N)
+![image du projet](https://i.ibb.co/1LPtMfj/Panel-Client.png)
+![image du projet](https://i.ibb.co/PMp63j3/metadatas-Image.png)
 
 ## Installation
 
