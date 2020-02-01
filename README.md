@@ -19,6 +19,12 @@ Voici un fichier exemple de métadonnées pour créer un nouveau token : [metada
 
 Vous pouvez désormais cliquer ici pour accéder à la DApp : http://localhost:3000/
 
+## Tests unitaires
+
+Lancer cette commande dans le terminal en étant dans le dossier PixT :
+
+```npm test```
+
 ## Developers
 
 [Documentation](https://github.com/Esselka/PixT/blob/master/docs/PixT.md)
