@@ -5,7 +5,7 @@
 
 ## Installation
 
-Vous avez besoin de node.js and npm. Vous devriez probablement l'installer globalement. [Installer Node](https://nodejs.org/)
+Vous avez besoin de node.js et de npm. Vous devriez probablement l'installer globalement. [Installer Node](https://nodejs.org/)
 
 ```sh
 git clone https://github.com/Esselka/PixT.git
